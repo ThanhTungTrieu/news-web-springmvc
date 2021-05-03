@@ -1,18 +1,21 @@
 package com.springmvcweb.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "role")
-public class RoleEntity extends AbstractEntity {
+public class RoleEntity extends BaseEntity {
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "code")
     private String code;
+
+    @ManyToMany(mappedBy = "roles")
+    List<UserEntity> users = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -28,5 +31,13 @@ public class RoleEntity extends AbstractEntity {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public List<UserEntity> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<UserEntity> users) {
+        this.users = users;
     }
 }

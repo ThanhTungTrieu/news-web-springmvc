@@ -1,11 +1,10 @@
 package com.springmvcweb.entity;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "news")
-public class NewsEntity extends AbstractEntity {
+public class NewsEntity extends BaseEntity {
 
     @Column(name = "title")
     private String title;

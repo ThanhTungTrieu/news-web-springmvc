@@ -1,10 +1,12 @@
 package com.springmvcweb.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class UserEntity extends AbstractEntity {
+public class UserEntity extends BaseEntity {
 
     @Column(name = "username")
     private String username;
@@ -17,6 +19,10 @@ public class UserEntity extends AbstractEntity {
 
     @Column(name = "status")
     private Integer status;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "roleId"))
+    private List<RoleEntity> roles = new ArrayList<>();
 
     public String getUsername() {
         return username;
@@ -48,5 +54,13 @@ public class UserEntity extends AbstractEntity {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public List<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleEntity> roles) {
+        this.roles = roles;
     }
 }
