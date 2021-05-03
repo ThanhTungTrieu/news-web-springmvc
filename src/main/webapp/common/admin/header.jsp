@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/common/taglib.jsp"%>
+<%@ page import="com.springmvcweb.util.SecurityUtil" %>
 <!DOCTYPE html>
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
