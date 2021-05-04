@@ -1,6 +1,6 @@
 package com.springmvcweb.service.impl;
 
-import com.springmvcweb.DTO.MyUser;
+import com.springmvcweb.dto.MyUser;
 import com.springmvcweb.constant.SystemConstant;
 import com.springmvcweb.entity.RoleEntity;
 import com.springmvcweb.entity.UserEntity;
