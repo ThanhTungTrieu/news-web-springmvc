@@ -1,3 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp"%>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách</title>
+</head>
+<body>
 <ul class="sidebar navbar-nav">
     <li class="nav-item active">
         <a class="nav-link" href="index.html">
@@ -27,8 +35,10 @@
             <span>Charts</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<c:url value="/quan-tri/bai-viet/danh-sach" />">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Danh sách bài viết</span></a>
     </li>
 </ul>
+</body>
+</html>

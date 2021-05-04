@@ -9,6 +9,7 @@
     <link href="<c:url value="/template/admin/vendor/fontawesome-free/css/all.min.css" />" rel="stylesheet" />
     <link href="<c:url value="/template/admin/css/sb-admin.css" />" rel="stylesheet" />
     <link href="<c:url value="/template/admin/vendor/datatables/dataTables.bootstrap4.css" /> " rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body id="page-top">
 
