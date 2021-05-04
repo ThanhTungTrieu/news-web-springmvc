@@ -18,6 +18,10 @@ public class NewsEntity extends BaseEntity {
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoryId")
+    private CategoryEntity category;
+
     public String getTitle() {
         return title;
     }
