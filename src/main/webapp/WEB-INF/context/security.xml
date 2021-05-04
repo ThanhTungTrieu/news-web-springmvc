@@ -18,12 +18,15 @@
                      login-processing-url="/j_spring_security_check"
                      authentication-success-handler-ref="customSuccessHandler"
                      authentication-failure-url="/dang-nhap?incorrectAccount"/>
-        <!-- TODO: Session Timeout cause redirect to any controller when Session is out of time, fix it -->
+        <!-- TODO: Session Timeout invalid-session-url cause cannot redirect to any controller when Session is out of time, fix it -->
 <!--        <session-management invalid-session-url="/dang-nhap?sessionTimeout">-->
 <!--            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/dang-nhap?sessionTimeout"/>-->
 <!--        </session-management>-->
+            <session-management>
+                    <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/dang-nhap?sessionTimeout"/>
+            </session-management>
         <!-- ./ -->
-        <logout logout-success-url="/dang-nhap" delete-cookies="JSESSIONID"/>
+        <logout delete-cookies="JSESSIONID"/>
     </http>
 
     <authentication-manager >

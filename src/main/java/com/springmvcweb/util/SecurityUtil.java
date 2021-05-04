@@ -1,6 +1,6 @@
 package com.springmvcweb.util;
 
-import com.springmvcweb.DTO.MyUser;
+import com.springmvcweb.dto.MyUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
