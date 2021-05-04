@@ -1,4 +1,4 @@
-package com.springmvcweb.DTO;
+package com.springmvcweb.dto;
 
 public class UserDTO extends AbstractDTO<UserDTO> {
 

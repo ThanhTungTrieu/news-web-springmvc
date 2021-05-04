@@ -1,4 +1,4 @@
-package com.springmvcweb.DTO;
+package com.springmvcweb.dto;
 
 import java.util.ArrayList;
 import java.util.Date;

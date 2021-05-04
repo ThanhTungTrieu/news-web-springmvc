@@ -1,10 +1,11 @@
-package com.springmvcweb.DTO;
+package com.springmvcweb.dto;
 
 public class NewsDTO extends AbstractDTO<NewsDTO> {
     private String title;
     private String thumbnail;
     private String shortDescription;
     private String content;
+    private String categoryCode;
 
     public String getTitle() {
         return title;
@@ -36,5 +37,13 @@ public class NewsDTO extends AbstractDTO<NewsDTO> {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getCategoryCode() {
+        return categoryCode;
+    }
+
+    public void setCategoryCode(String categoryCode) {
+        this.categoryCode = categoryCode;
     }
 }
