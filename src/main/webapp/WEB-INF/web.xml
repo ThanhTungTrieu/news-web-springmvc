@@ -9,12 +9,12 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <!-- TODO: Session Timeout cause redirect to any controller when Session is out of time, fix it -->
-<!--    <listener>-->
-<!--        <listener-class>-->
-<!--            org.springframework.security.web.session.HttpSessionEventPublisher-->
-<!--        </listener-class>-->
-<!--    </listener>-->
+    <!-- TODO: Session Timeout invalid-session-url cause cannot redirect to any controller when Session is out of time, fix it -->
+    <listener>
+        <listener-class>
+            org.springframework.security.web.session.HttpSessionEventPublisher
+        </listener-class>
+    </listener>
     <!-- ./ -->
 
     <context-param>

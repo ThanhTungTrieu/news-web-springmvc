@@ -4,5 +4,6 @@
         <class>com.springmvcweb.entity.NewsEntity</class>
         <class>com.springmvcweb.entity.UserEntity</class>
         <class>com.springmvcweb.entity.RoleEntity</class>
+        <class>com.springmvcweb.entity.CategoryEntity</class>
     </persistence-unit>
 </persistence>
