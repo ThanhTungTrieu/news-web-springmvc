@@ -6,28 +6,27 @@
 <head>
     <title><dec:title default="Trang chủ" /></title>
 
-    <link href="<c:url value="/template/web/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet" />
-    <link href="<c:url value="/template/web/css/small-business.css" /> " rel="stylesheet" />
+    <link href="<c:url value="/template/web/vendor/bootstrap/css/bootstrap.min.css" /> " rel="stylesheet" type="text/css" media="all">
+    <link href="<c:url value="/template/web/css/style.css" /> " rel="stylesheet" type="text/css" media="all">
+    <script src="<c:url value="/template/web/vendor/jquery/jquery.min.js" />" type="text/javascript"></script>
+    <script src="<c:url value="/template/paging/jquery.twbsPagination.js" />"></script>
+
 </head>
 <body>
-
     <!-- header -->
     <%@ include file="/common/web/header.jsp"%>
     <!-- header -->
 
-    <!-- body -->
     <div class="container">
         <dec:body />
     </div>
-    <!-- body -->
 
-    <!-- header -->
+    <!-- footer -->
     <%@ include file="/common/web/footer.jsp"%>
-    <!-- header -->
+    <!-- footer -->
 
-    <!-- script -->
-    <script src="<c:url value="/template/web/vendor/jquery/jquery.min.js" /> "></script>
-    <script src="<c:url value="/template/web/vendor/bootstrap/js/bootstrap.bundle.min.js" /> "></script>
-    <!-- script -->
+    <!-- js -->
+    <script src="<c:url value="/template/web/vendor/bootstrap/js/bootstrap.bundle.min.js" />" type="text/javascript"></script>
+    <script src="<c:url value="/template/web/vendor/bootstrap/js/bootstrap.min.js" />"></script>
 </body>
 </html>

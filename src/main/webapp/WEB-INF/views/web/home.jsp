@@ -8,80 +8,186 @@
 
     <meta charset="UTF-8">
 
-    <title>Home Page</title>
+    <title>Trang chủ</title>
 
 </head>
 
 <body>
 <!-- Page Content -->
-<div class="container">
+ <!-- Heading Row -->
+<div class="row">
 
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
+    <div class="col-lg-3">
+
+        <h1 class="my-4">Shop Name</h1>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Category 1</a>
+            <a href="#" class="list-group-item">Category 2</a>
+            <a href="#" class="list-group-item">Category 3</a>
         </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">Business Name or Tagline</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-            <a class="btn btn-primary" href="#">Call to Action!</a>
-        </div>
-        <!-- /.col-md-4 -->
+
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-3 -->
 
-    <!-- Call to Action Well -->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body">
-            <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
-        </div>
-    </div>
+    <div class="col-lg-9">
 
-    <!-- Content Row -->
-    <div class="row">
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card One</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary btn-sm">More Info</a>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <form action="<c:url value="/trang-chu" />" id="formSubmit" method="get">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item One</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Two</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Three</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Four</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Five</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">Item Six</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Two</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary btn-sm">More Info</a>
-                </div>
-            </div>
-        </div>
-        <!-- /.col-md-4 -->
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Three</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary btn-sm">More Info</a>
-                </div>
-            </div>
-        </div>
-        <!-- /.col-md-4 -->
+        <!-- /.row -->
+            <ul class="pagination" id="pagination"></ul>
+            <input type="hidden" id="page" value="" name="page">
+            <input type="hidden" id="totalPages" value="" name="totalPages">
+        </form>
 
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
 
 </div>
-<!-- /.container -->
+<!-- /.row -->
+
+    <script type="text/javascript">
+        var totalPages = ${model.totalPages};
+        var currentPage = ${model.page};
+        var limit = 6;
+        $(function () {
+            window.pagObj = $('#pagination').twbsPagination({
+                totalPages: totalPages,
+                visiblePages: 3,
+                startPage: currentPage,
+                onPageClick: function (event, page) {
+                    if (page != currentPage) {
+                        $('#page').val(page);
+                        $('#limit').val(limit);
+                        $('#formSubmit').submit();
+                    }
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
