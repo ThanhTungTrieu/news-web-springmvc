@@ -5,6 +5,7 @@ import com.springmvcweb.entity.NewsEntity;
 import com.springmvcweb.repository.NewsRepository;
 import com.springmvcweb.service.INewsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,5 +34,28 @@ public class NewsService implements INewsService {
             models.add(model);
         }
         return models;
+    }
+
+    @Override
+    public List<NewsDTO> findAll(Pageable pageable) {
+        List<NewsDTO> models = new ArrayList<>();
+        List<NewsEntity> entities = newsRepository.findAll(pageable).getContent();
+        for (NewsEntity item: entities) {
+            NewsDTO model = new NewsDTO();
+            model.setTitle(item.getTitle());
+            model.setContent(item.getContent());
+            model.setShortDescription(item.getShortDescription());
+            model.setCreatedBy(item.getCreatedBy());
+            model.setCreatedDate(item.getCreatedDate());
+            model.setModifiedBy(item.getModifiedBy());
+            model.setModifiedDate(item.getModifiedDate());
+            models.add(model);
+        }
+        return models;
+    }
+
+    @Override
+    public int getTotalItems() {
+        return (int) newsRepository.count();
     }
 }
