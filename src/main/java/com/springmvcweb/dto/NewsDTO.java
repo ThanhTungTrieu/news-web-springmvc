@@ -5,6 +5,7 @@ public class NewsDTO extends AbstractDTO<NewsDTO> {
     private String thumbnail;
     private String shortDescription;
     private String content;
+    private Long categoryId;
     private String categoryCode;
 
     public String getTitle() {
@@ -37,6 +38,14 @@ public class NewsDTO extends AbstractDTO<NewsDTO> {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategoryCode() {

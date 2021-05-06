@@ -12,6 +12,10 @@ public abstract class AbstractDTO<T> {
     protected String modifiedBy;
     protected Long[] ids;
     protected List<T> listResult = new ArrayList<>();
+    private int page;
+    private int limit;
+    private int totalPages;
+    private int totalItems;
 
     public Long getId() {
         return id;
@@ -69,4 +73,35 @@ public abstract class AbstractDTO<T> {
         this.listResult = listResult;
     }
 
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
+    }
+
+    public int getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
+    }
+
+    public int getTotalItems() {
+        return totalItems;
+    }
+
+    public void setTotalItems(int totalItems) {
+        this.totalItems = totalItems;
+    }
 }
