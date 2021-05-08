@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 
 <html>
@@ -7,598 +8,1238 @@
 
     <meta charset="UTF-8">
 
-    <title>Home Page</title>
+    <title>Trang chủ</title>
 
 </head>
 
 <body>
-<div id="content-wrapper">
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
 
-    <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="#">Home</a>
+                </li>
+                <li class="active">Dashboard</li>
+            </ul><!-- /.breadcrumb -->
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Overview</li>
-        </ol>
-
-        <!-- Icon Cards-->
-        <div class="row">
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-primary o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-fw fa-comments"></i>
-                        </div>
-                        <div class="mr-5">26 New Messages!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-warning o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-fw fa-list"></i>
-                        </div>
-                        <div class="mr-5">11 New Tasks!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-success o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-fw fa-shopping-cart"></i>
-                        </div>
-                        <div class="mr-5">123 New Orders!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-danger o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-fw fa-life-ring"></i>
-                        </div>
-                        <div class="mr-5">13 New Tickets!</div>
-                    </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                        <span class="float-left">View Details</span>
-                        <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                    </a>
-                </div>
-            </div>
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+                </form>
+            </div><!-- /.nav-search -->
         </div>
 
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-            <div class="card-header">
-                <i class="fas fa-chart-area"></i>
-                Area Chart Example</div>
-            <div class="card-body">
-                <canvas id="myAreaChart" width="100%" height="30"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-        <!-- DataTables Example -->
-        <div class="card mb-3">
-            <div class="card-header">
-                <i class="fas fa-table"></i>
-                Data Table Example</div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                        </thead>
-                        <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                        </tfoot>
-                        <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2012/03/29</td>
-                            <td>$433,060</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                            <td>$162,700</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2012/12/02</td>
-                            <td>$372,000</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                            <td>Sales Assistant</td>
-                            <td>San Francisco</td>
-                            <td>59</td>
-                            <td>2012/08/06</td>
-                            <td>$137,500</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                            <td>Integration Specialist</td>
-                            <td>Tokyo</td>
-                            <td>55</td>
-                            <td>2010/10/14</td>
-                            <td>$327,900</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                            <td>Javascript Developer</td>
-                            <td>San Francisco</td>
-                            <td>39</td>
-                            <td>2009/09/15</td>
-                            <td>$205,500</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                            <td>Software Engineer</td>
-                            <td>Edinburgh</td>
-                            <td>23</td>
-                            <td>2008/12/13</td>
-                            <td>$103,600</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                            <td>Office Manager</td>
-                            <td>London</td>
-                            <td>30</td>
-                            <td>2008/12/19</td>
-                            <td>$90,560</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                            <td>Support Lead</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2013/03/03</td>
-                            <td>$342,000</td>
-                        </tr>
-                        <tr>
-                            <td>Charde Marshall</td>
-                            <td>Regional Director</td>
-                            <td>San Francisco</td>
-                            <td>36</td>
-                            <td>2008/10/16</td>
-                            <td>$470,600</td>
-                        </tr>
-                        <tr>
-                            <td>Haley Kennedy</td>
-                            <td>Senior Marketing Designer</td>
-                            <td>London</td>
-                            <td>43</td>
-                            <td>2012/12/18</td>
-                            <td>$313,500</td>
-                        </tr>
-                        <tr>
-                            <td>Tatyana Fitzpatrick</td>
-                            <td>Regional Director</td>
-                            <td>London</td>
-                            <td>19</td>
-                            <td>2010/03/17</td>
-                            <td>$385,750</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Silva</td>
-                            <td>Marketing Designer</td>
-                            <td>London</td>
-                            <td>66</td>
-                            <td>2012/11/27</td>
-                            <td>$198,500</td>
-                        </tr>
-                        <tr>
-                            <td>Paul Byrd</td>
-                            <td>Chief Financial Officer (CFO)</td>
-                            <td>New York</td>
-                            <td>64</td>
-                            <td>2010/06/09</td>
-                            <td>$725,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gloria Little</td>
-                            <td>Systems Administrator</td>
-                            <td>New York</td>
-                            <td>59</td>
-                            <td>2009/04/10</td>
-                            <td>$237,500</td>
-                        </tr>
-                        <tr>
-                            <td>Bradley Greer</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td>41</td>
-                            <td>2012/10/13</td>
-                            <td>$132,000</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                            <td>Personnel Lead</td>
-                            <td>Edinburgh</td>
-                            <td>35</td>
-                            <td>2012/09/26</td>
-                            <td>$217,500</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                            <td>Development Lead</td>
-                            <td>New York</td>
-                            <td>30</td>
-                            <td>2011/09/03</td>
-                            <td>$345,000</td>
-                        </tr>
-                        <tr>
-                            <td>Yuri Berry</td>
-                            <td>Chief Marketing Officer (CMO)</td>
-                            <td>New York</td>
-                            <td>40</td>
-                            <td>2009/06/25</td>
-                            <td>$675,000</td>
-                        </tr>
-                        <tr>
-                            <td>Caesar Vance</td>
-                            <td>Pre-Sales Support</td>
-                            <td>New York</td>
-                            <td>21</td>
-                            <td>2011/12/12</td>
-                            <td>$106,450</td>
-                        </tr>
-                        <tr>
-                            <td>Doris Wilder</td>
-                            <td>Sales Assistant</td>
-                            <td>Sidney</td>
-                            <td>23</td>
-                            <td>2010/09/20</td>
-                            <td>$85,600</td>
-                        </tr>
-                        <tr>
-                            <td>Angelica Ramos</td>
-                            <td>Chief Executive Officer (CEO)</td>
-                            <td>London</td>
-                            <td>47</td>
-                            <td>2009/10/09</td>
-                            <td>$1,200,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gavin Joyce</td>
-                            <td>Developer</td>
-                            <td>Edinburgh</td>
-                            <td>42</td>
-                            <td>2010/12/22</td>
-                            <td>$92,575</td>
-                        </tr>
-                        <tr>
-                            <td>Jennifer Chang</td>
-                            <td>Regional Director</td>
-                            <td>Singapore</td>
-                            <td>28</td>
-                            <td>2010/11/14</td>
-                            <td>$357,650</td>
-                        </tr>
-                        <tr>
-                            <td>Brenden Wagner</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td>28</td>
-                            <td>2011/06/07</td>
-                            <td>$206,850</td>
-                        </tr>
-                        <tr>
-                            <td>Fiona Green</td>
-                            <td>Chief Operating Officer (COO)</td>
-                            <td>San Francisco</td>
-                            <td>48</td>
-                            <td>2010/03/11</td>
-                            <td>$850,000</td>
-                        </tr>
-                        <tr>
-                            <td>Shou Itou</td>
-                            <td>Regional Marketing</td>
-                            <td>Tokyo</td>
-                            <td>20</td>
-                            <td>2011/08/14</td>
-                            <td>$163,000</td>
-                        </tr>
-                        <tr>
-                            <td>Michelle House</td>
-                            <td>Integration Specialist</td>
-                            <td>Sidney</td>
-                            <td>37</td>
-                            <td>2011/06/02</td>
-                            <td>$95,400</td>
-                        </tr>
-                        <tr>
-                            <td>Suki Burks</td>
-                            <td>Developer</td>
-                            <td>London</td>
-                            <td>53</td>
-                            <td>2009/10/22</td>
-                            <td>$114,500</td>
-                        </tr>
-                        <tr>
-                            <td>Prescott Bartlett</td>
-                            <td>Technical Author</td>
-                            <td>London</td>
-                            <td>27</td>
-                            <td>2011/05/07</td>
-                            <td>$145,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gavin Cortez</td>
-                            <td>Team Leader</td>
-                            <td>San Francisco</td>
-                            <td>22</td>
-                            <td>2008/10/26</td>
-                            <td>$235,500</td>
-                        </tr>
-                        <tr>
-                            <td>Martena Mccray</td>
-                            <td>Post-Sales support</td>
-                            <td>Edinburgh</td>
-                            <td>46</td>
-                            <td>2011/03/09</td>
-                            <td>$324,050</td>
-                        </tr>
-                        <tr>
-                            <td>Unity Butler</td>
-                            <td>Marketing Designer</td>
-                            <td>San Francisco</td>
-                            <td>47</td>
-                            <td>2009/12/09</td>
-                            <td>$85,675</td>
-                        </tr>
-                        <tr>
-                            <td>Howard Hatfield</td>
-                            <td>Office Manager</td>
-                            <td>San Francisco</td>
-                            <td>51</td>
-                            <td>2008/12/16</td>
-                            <td>$164,500</td>
-                        </tr>
-                        <tr>
-                            <td>Hope Fuentes</td>
-                            <td>Secretary</td>
-                            <td>San Francisco</td>
-                            <td>41</td>
-                            <td>2010/02/12</td>
-                            <td>$109,850</td>
-                        </tr>
-                        <tr>
-                            <td>Vivian Harrell</td>
-                            <td>Financial Controller</td>
-                            <td>San Francisco</td>
-                            <td>62</td>
-                            <td>2009/02/14</td>
-                            <td>$452,500</td>
-                        </tr>
-                        <tr>
-                            <td>Timothy Mooney</td>
-                            <td>Office Manager</td>
-                            <td>London</td>
-                            <td>37</td>
-                            <td>2008/12/11</td>
-                            <td>$136,200</td>
-                        </tr>
-                        <tr>
-                            <td>Jackson Bradshaw</td>
-                            <td>Director</td>
-                            <td>New York</td>
-                            <td>65</td>
-                            <td>2008/09/26</td>
-                            <td>$645,750</td>
-                        </tr>
-                        <tr>
-                            <td>Olivia Liang</td>
-                            <td>Support Engineer</td>
-                            <td>Singapore</td>
-                            <td>64</td>
-                            <td>2011/02/03</td>
-                            <td>$234,500</td>
-                        </tr>
-                        <tr>
-                            <td>Bruno Nash</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td>38</td>
-                            <td>2011/05/03</td>
-                            <td>$163,500</td>
-                        </tr>
-                        <tr>
-                            <td>Sakura Yamamoto</td>
-                            <td>Support Engineer</td>
-                            <td>Tokyo</td>
-                            <td>37</td>
-                            <td>2009/08/19</td>
-                            <td>$139,575</td>
-                        </tr>
-                        <tr>
-                            <td>Thor Walton</td>
-                            <td>Developer</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2013/08/11</td>
-                            <td>$98,540</td>
-                        </tr>
-                        <tr>
-                            <td>Finn Camacho</td>
-                            <td>Support Engineer</td>
-                            <td>San Francisco</td>
-                            <td>47</td>
-                            <td>2009/07/07</td>
-                            <td>$87,500</td>
-                        </tr>
-                        <tr>
-                            <td>Serge Baldwin</td>
-                            <td>Data Coordinator</td>
-                            <td>Singapore</td>
-                            <td>64</td>
-                            <td>2012/04/09</td>
-                            <td>$138,575</td>
-                        </tr>
-                        <tr>
-                            <td>Zenaida Frank</td>
-                            <td>Software Engineer</td>
-                            <td>New York</td>
-                            <td>63</td>
-                            <td>2010/01/04</td>
-                            <td>$125,250</td>
-                        </tr>
-                        <tr>
-                            <td>Zorita Serrano</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td>56</td>
-                            <td>2012/06/01</td>
-                            <td>$115,000</td>
-                        </tr>
-                        <tr>
-                            <td>Jennifer Acosta</td>
-                            <td>Junior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>43</td>
-                            <td>2013/02/01</td>
-                            <td>$75,650</td>
-                        </tr>
-                        <tr>
-                            <td>Cara Stevens</td>
-                            <td>Sales Assistant</td>
-                            <td>New York</td>
-                            <td>46</td>
-                            <td>2011/12/06</td>
-                            <td>$145,600</td>
-                        </tr>
-                        <tr>
-                            <td>Hermione Butler</td>
-                            <td>Regional Director</td>
-                            <td>London</td>
-                            <td>47</td>
-                            <td>2011/03/21</td>
-                            <td>$356,250</td>
-                        </tr>
-                        <tr>
-                            <td>Lael Greer</td>
-                            <td>Systems Administrator</td>
-                            <td>London</td>
-                            <td>21</td>
-                            <td>2009/02/27</td>
-                            <td>$103,500</td>
-                        </tr>
-                        <tr>
-                            <td>Jonas Alexander</td>
-                            <td>Developer</td>
-                            <td>San Francisco</td>
-                            <td>30</td>
-                            <td>2010/07/14</td>
-                            <td>$86,500</td>
-                        </tr>
-                        <tr>
-                            <td>Shad Decker</td>
-                            <td>Regional Director</td>
-                            <td>Edinburgh</td>
-                            <td>51</td>
-                            <td>2008/11/13</td>
-                            <td>$183,000</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Bruce</td>
-                            <td>Javascript Developer</td>
-                            <td>Singapore</td>
-                            <td>29</td>
-                            <td>2011/06/27</td>
-                            <td>$183,000</td>
-                        </tr>
-                        <tr>
-                            <td>Donna Snider</td>
-                            <td>Customer Support</td>
-                            <td>New York</td>
-                            <td>27</td>
-                            <td>2011/01/25</td>
-                            <td>$112,000</td>
-                        </tr>
-                        </tbody>
-                    </table>
+        <div class="page-content">
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                    <i class="ace-icon fa fa-cog bigger-130"></i>
                 </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
 
+                <div class="ace-settings-box clearfix" id="ace-settings-box">
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <div class="pull-left">
+                                <select id="skin-colorpicker" class="hide">
+                                    <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                </select>
+                            </div>
+                            <span>&nbsp; Choose Skin</span>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+                            <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+                            <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+                            <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+                            <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+                            <label class="lbl" for="ace-settings-add-container">
+                                Inside
+                                <b>.container</b>
+                            </label>
+                        </div>
+                    </div><!-- /.pull-left -->
+
+                    <div class="pull-left width-50">
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+                            <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+                            <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                        </div>
+
+                        <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+                            <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                        </div>
+                    </div><!-- /.pull-left -->
+                </div><!-- /.ace-settings-box -->
+            </div><!-- /.ace-settings-container -->
+
+            <div class="page-header">
+                <h1>
+                    Dashboard
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>
+                        overview &amp; stats
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="ace-icon fa fa-times"></i>
+                        </button>
+
+                        <i class="ace-icon fa fa-check green"></i>
+
+                        Welcome to
+                        <strong class="green">
+                            Ace
+                            <small>(v1.3.3)</small>
+                        </strong>,
+                        легкий, много-функциональный и простой в использовании шаблон для админки на bootstrap 3.3. Загрузить исходники с <a href="https://github.com/bopoda/ace">github</a> (with minified ace js files).
+                    </div>
+
+                    <div class="row">
+                        <div class="space-6"></div>
+
+                        <div class="col-sm-7 infobox-container">
+                            <div class="infobox infobox-green">
+                                <div class="infobox-icon">
+                                    <i class="ace-icon fa fa-comments"></i>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-data-number">32</span>
+                                    <div class="infobox-content">comments + 2 reviews</div>
+                                </div>
+
+                                <div class="stat stat-success">8%</div>
+                            </div>
+
+                            <div class="infobox infobox-blue">
+                                <div class="infobox-icon">
+                                    <i class="ace-icon fa fa-twitter"></i>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-data-number">11</span>
+                                    <div class="infobox-content">new followers</div>
+                                </div>
+
+                                <div class="badge badge-success">
+                                    +32%
+                                    <i class="ace-icon fa fa-arrow-up"></i>
+                                </div>
+                            </div>
+
+                            <div class="infobox infobox-pink">
+                                <div class="infobox-icon">
+                                    <i class="ace-icon fa fa-shopping-cart"></i>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-data-number">8</span>
+                                    <div class="infobox-content">new orders</div>
+                                </div>
+                                <div class="stat stat-important">4%</div>
+                            </div>
+
+                            <div class="infobox infobox-red">
+                                <div class="infobox-icon">
+                                    <i class="ace-icon fa fa-flask"></i>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-data-number">7</span>
+                                    <div class="infobox-content">experiments</div>
+                                </div>
+                            </div>
+
+                            <div class="infobox infobox-orange2">
+                                <div class="infobox-chart">
+                                    <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-data-number">6,251</span>
+                                    <div class="infobox-content">pageviews</div>
+                                </div>
+
+                                <div class="badge badge-success">
+                                    7.2%
+                                    <i class="ace-icon fa fa-arrow-up"></i>
+                                </div>
+                            </div>
+
+                            <div class="infobox infobox-blue2">
+                                <div class="infobox-progress">
+                                    <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
+                                        <span class="percent">42</span>%
+                                    </div>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <span class="infobox-text">traffic used</span>
+
+                                    <div class="infobox-content">
+                                        <span class="bigger-110">~</span>
+                                        58GB remaining
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-6"></div>
+
+                            <div class="infobox infobox-green infobox-small infobox-dark">
+                                <div class="infobox-progress">
+                                    <div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+                                        <span class="percent">61</span>%
+                                    </div>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <div class="infobox-content">Task</div>
+                                    <div class="infobox-content">Completion</div>
+                                </div>
+                            </div>
+
+                            <div class="infobox infobox-blue infobox-small infobox-dark">
+                                <div class="infobox-chart">
+                                    <span class="sparkline" data-values="3,4,2,3,4,4,2,2"></span>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <div class="infobox-content">Earnings</div>
+                                    <div class="infobox-content">$32,000</div>
+                                </div>
+                            </div>
+
+                            <div class="infobox infobox-grey infobox-small infobox-dark">
+                                <div class="infobox-icon">
+                                    <i class="ace-icon fa fa-download"></i>
+                                </div>
+
+                                <div class="infobox-data">
+                                    <div class="infobox-content">Downloads</div>
+                                    <div class="infobox-content">1,205</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vspace-12-sm"></div>
+
+                        <div class="col-sm-5">
+                            <div class="widget-box">
+                                <div class="widget-header widget-header-flat widget-header-small">
+                                    <h5 class="widget-title">
+                                        <i class="ace-icon fa fa-signal"></i>
+                                        Traffic Sources
+                                    </h5>
+
+                                    <div class="widget-toolbar no-border">
+                                        <div class="inline dropdown-hover">
+                                            <button class="btn btn-minier btn-primary">
+                                                This Week
+                                                <i class="ace-icon fa fa-angle-down icon-on-right bigger-110"></i>
+                                            </button>
+
+                                            <ul class="dropdown-menu dropdown-menu-right dropdown-125 dropdown-lighter dropdown-close dropdown-caret">
+                                                <li class="active">
+                                                    <a href="#" class="blue">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110">&nbsp;</i>
+                                                        This Week
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        Last Week
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        This Month
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="ace-icon fa fa-caret-right bigger-110 invisible">&nbsp;</i>
+                                                        Last Month
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <div id="piechart-placeholder"></div>
+
+                                        <div class="hr hr8 hr-double"></div>
+
+                                        <div class="clearfix">
+                                            <div class="grid3">
+															<span class="grey">
+																<i class="ace-icon fa fa-facebook-square fa-2x blue"></i>
+																&nbsp; likes
+															</span>
+                                                <h4 class="bigger pull-right">1,255</h4>
+                                            </div>
+
+                                            <div class="grid3">
+															<span class="grey">
+																<i class="ace-icon fa fa-twitter-square fa-2x purple"></i>
+																&nbsp; tweets
+															</span>
+                                                <h4 class="bigger pull-right">941</h4>
+                                            </div>
+
+                                            <div class="grid3">
+															<span class="grey">
+																<i class="ace-icon fa fa-pinterest-square fa-2x red"></i>
+																&nbsp; pins
+															</span>
+                                                <h4 class="bigger pull-right">1,050</h4>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div><!-- /.widget-box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <div class="hr hr32 hr-dotted"></div>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="widget-box transparent">
+                                <div class="widget-header widget-header-flat">
+                                    <h4 class="widget-title lighter">
+                                        <i class="ace-icon fa fa-star orange"></i>
+                                        Popular Domains
+                                    </h4>
+
+                                    <div class="widget-toolbar">
+                                        <a href="#" data-action="collapse">
+                                            <i class="ace-icon fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main no-padding">
+                                        <table class="table table-bordered table-striped">
+                                            <thead class="thin-border-bottom">
+                                            <tr>
+                                                <th>
+                                                    <i class="ace-icon fa fa-caret-right blue"></i>name
+                                                </th>
+
+                                                <th>
+                                                    <i class="ace-icon fa fa-caret-right blue"></i>price
+                                                </th>
+
+                                                <th class="hidden-480">
+                                                    <i class="ace-icon fa fa-caret-right blue"></i>status
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr>
+                                                <td>internet.com</td>
+
+                                                <td>
+                                                    <small>
+                                                        <s class="red">$29.99</s>
+                                                    </small>
+                                                    <b class="green">$19.99</b>
+                                                </td>
+
+                                                <td class="hidden-480">
+                                                    <span class="label label-info arrowed-right arrowed-in">on sale</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>online.com</td>
+
+                                                <td>
+                                                    <b class="blue">$16.45</b>
+                                                </td>
+
+                                                <td class="hidden-480">
+                                                    <span class="label label-success arrowed-in arrowed-in-right">approved</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>newnet.com</td>
+
+                                                <td>
+                                                    <b class="blue">$15.00</b>
+                                                </td>
+
+                                                <td class="hidden-480">
+                                                    <span class="label label-danger arrowed">pending</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>web.com</td>
+
+                                                <td>
+                                                    <small>
+                                                        <s class="red">$24.99</s>
+                                                    </small>
+                                                    <b class="green">$19.95</b>
+                                                </td>
+
+                                                <td class="hidden-480">
+																	<span class="label arrowed">
+																		<s>out of stock</s>
+																	</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>domain.com</td>
+
+                                                <td>
+                                                    <b class="blue">$12.00</b>
+                                                </td>
+
+                                                <td class="hidden-480">
+                                                    <span class="label label-warning arrowed arrowed-right">SOLD</span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div><!-- /.widget-box -->
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-7">
+                            <div class="widget-box transparent">
+                                <div class="widget-header widget-header-flat">
+                                    <h4 class="widget-title lighter">
+                                        <i class="ace-icon fa fa-signal"></i>
+                                        Sale Stats
+                                    </h4>
+
+                                    <div class="widget-toolbar">
+                                        <a href="#" data-action="collapse">
+                                            <i class="ace-icon fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-4">
+                                        <div id="sales-charts"></div>
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div><!-- /.widget-box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <div class="hr hr32 hr-dotted"></div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="widget-box transparent" id="recent-box">
+                                <div class="widget-header">
+                                    <h4 class="widget-title lighter smaller">
+                                        <i class="ace-icon fa fa-rss orange"></i>RECENT
+                                    </h4>
+
+                                    <div class="widget-toolbar no-border">
+                                        <ul class="nav nav-tabs" id="recent-tab">
+                                            <li class="active">
+                                                <a data-toggle="tab" href="#task-tab">Tasks</a>
+                                            </li>
+
+                                            <li>
+                                                <a data-toggle="tab" href="#member-tab">Members</a>
+                                            </li>
+
+                                            <li>
+                                                <a data-toggle="tab" href="#comment-tab">Comments</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main padding-4">
+                                        <div class="tab-content padding-8">
+                                            <div id="task-tab" class="tab-pane active">
+                                                <h4 class="smaller lighter green">
+                                                    <i class="ace-icon fa fa-list"></i>
+                                                    Sortable Lists
+                                                </h4>
+
+                                                <ul id="tasks" class="item-list">
+                                                    <li class="item-orange clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Answering customer questions</span>
+                                                        </label>
+
+                                                        <div class="pull-right easy-pie-chart percentage" data-size="30" data-color="#ECCB71" data-percent="42">
+                                                            <span class="percent">42</span>%
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="item-red clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Fixing bugs</span>
+                                                        </label>
+
+                                                        <div class="pull-right action-buttons">
+                                                            <a href="#" class="blue">
+                                                                <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                            </a>
+
+                                                            <span class="vbar"></span>
+
+                                                            <a href="#" class="red">
+                                                                <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                            </a>
+
+                                                            <span class="vbar"></span>
+
+                                                            <a href="#" class="green">
+                                                                <i class="ace-icon fa fa-flag bigger-130"></i>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="item-default clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Adding new features</span>
+                                                        </label>
+
+                                                        <div class="inline pull-right position-relative dropdown-hover">
+                                                            <button class="btn btn-minier bigger btn-primary">
+                                                                <i class="ace-icon fa fa-cog icon-only bigger-120"></i>
+                                                            </button>
+
+                                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-caret dropdown-close dropdown-menu-right">
+                                                                <li>
+                                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Mark&nbsp;as&nbsp;done">
+																					<span class="green">
+																						<i class="ace-icon fa fa-check bigger-110"></i>
+																					</span>
+                                                                    </a>
+                                                                </li>
+
+                                                                <li>
+                                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																					<span class="red">
+																						<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																					</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="item-blue clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Upgrading scripts used in template</span>
+                                                        </label>
+                                                    </li>
+
+                                                    <li class="item-grey clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Adding new skins</span>
+                                                        </label>
+                                                    </li>
+
+                                                    <li class="item-green clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Updating server software up</span>
+                                                        </label>
+                                                    </li>
+
+                                                    <li class="item-pink clearfix">
+                                                        <label class="inline">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"> Cleaning up</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div id="member-tab" class="tab-pane">
+                                                <div class="clearfix">
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Bob Doe's avatar" src="<c:url value="/template/admin/assets/avatars/user.jpg" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Bob Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">20 min</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-warning label-sm">pending</span>
+
+                                                                <div class="inline position-relative">
+                                                                    <button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                                        <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                                                    </button>
+
+                                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Joe Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar2.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Joe Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">1 hour</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-warning label-sm">pending</span>
+
+                                                                <div class="inline position-relative">
+                                                                    <button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                                        <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                                                    </button>
+
+                                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Jim Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Jim Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">2 hour</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-warning label-sm">pending</span>
+
+                                                                <div class="inline position-relative">
+                                                                    <button class="btn btn-minier btn-yellow btn-no-border dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                                        <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                                                    </button>
+
+                                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																							<span class="green">
+																								<i class="ace-icon fa fa-check bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																							<span class="orange">
+																								<i class="ace-icon fa fa-times bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																							<span class="red">
+																								<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																							</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Alex Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar5.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Alex Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">3 hour</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-danger label-sm">blocked</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Bob Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar2.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Bob Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">6 hour</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-success label-sm arrowed-in">approved</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Susan's avatar" src="<c:url value="/template/admin/assets/avatars/avatar3.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Susan</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">yesterday</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-success label-sm arrowed-in">approved</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Phil Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar4.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Phil Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">2 days ago</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-info label-sm arrowed-in arrowed-in-right">online</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv memberdiv">
+                                                        <div class="user">
+                                                            <img alt="Alexa Doe's avatar" src="<c:url value="/template/admin/assets/avatars/avatar1.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Alexa Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">3 days ago</span>
+                                                            </div>
+
+                                                            <div>
+                                                                <span class="label label-success label-sm arrowed-in">approved</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="space-4"></div>
+
+                                                <div class="center">
+                                                    <i class="ace-icon fa fa-users fa-2x green middle"></i>
+
+                                                    &nbsp;
+                                                    <a href="#" class="btn btn-sm btn-white btn-info">
+                                                        See all members &nbsp;
+                                                        <i class="ace-icon fa fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+
+                                                <div class="hr hr-double hr8"></div>
+                                            </div><!-- /.#member-tab -->
+
+                                            <div id="comment-tab" class="tab-pane">
+                                                <div class="comments">
+                                                    <div class="itemdiv commentdiv">
+                                                        <div class="user">
+                                                            <img alt="Bob Doe's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Bob Doe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="green">6 min</span>
+                                                            </div>
+
+                                                            <div class="text">
+                                                                <i class="ace-icon fa fa-quote-left"></i>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tools">
+                                                            <div class="inline position-relative">
+                                                                <button class="btn btn-minier bigger btn-yellow dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="ace-icon fa fa-angle-down icon-only bigger-120"></i>
+                                                                </button>
+
+                                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-success" data-rel="tooltip" title="Approve">
+																						<span class="green">
+																							<i class="ace-icon fa fa-check bigger-110"></i>
+																						</span>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-warning" data-rel="tooltip" title="Reject">
+																						<span class="orange">
+																							<i class="ace-icon fa fa-times bigger-110"></i>
+																						</span>
+                                                                        </a>
+                                                                    </li>
+
+                                                                    <li>
+                                                                        <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																						<span class="red">
+																							<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																						</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv commentdiv">
+                                                        <div class="user">
+                                                            <img alt="Jennifer's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar1.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Jennifer</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="blue">15 min</span>
+                                                            </div>
+
+                                                            <div class="text">
+                                                                <i class="ace-icon fa fa-quote-left"></i>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tools">
+                                                            <div class="action-buttons bigger-125">
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-pencil blue"></i>
+                                                                </a>
+
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-trash-o red"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv commentdiv">
+                                                        <div class="user">
+                                                            <img alt="Joe's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar2.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Joe</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="orange">22 min</span>
+                                                            </div>
+
+                                                            <div class="text">
+                                                                <i class="ace-icon fa fa-quote-left"></i>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tools">
+                                                            <div class="action-buttons bigger-125">
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-pencil blue"></i>
+                                                                </a>
+
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-trash-o red"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="itemdiv commentdiv">
+                                                        <div class="user">
+                                                            <img alt="Rita's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar3.png" />" />
+                                                        </div>
+
+                                                        <div class="body">
+                                                            <div class="name">
+                                                                <a href="#">Rita</a>
+                                                            </div>
+
+                                                            <div class="time">
+                                                                <i class="ace-icon fa fa-clock-o"></i>
+                                                                <span class="red">50 min</span>
+                                                            </div>
+
+                                                            <div class="text">
+                                                                <i class="ace-icon fa fa-quote-left"></i>
+                                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis &hellip;
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="tools">
+                                                            <div class="action-buttons bigger-125">
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-pencil blue"></i>
+                                                                </a>
+
+                                                                <a href="#">
+                                                                    <i class="ace-icon fa fa-trash-o red"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="hr hr8"></div>
+
+                                                <div class="center">
+                                                    <i class="ace-icon fa fa-comments-o fa-2x green middle"></i>
+
+                                                    &nbsp;
+                                                    <a href="#" class="btn btn-sm btn-white btn-info">
+                                                        See all comments &nbsp;
+                                                        <i class="ace-icon fa fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+
+                                                <div class="hr hr-double hr8"></div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div><!-- /.widget-box -->
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-6">
+                            <div class="widget-box">
+                                <div class="widget-header">
+                                    <h4 class="widget-title lighter smaller">
+                                        <i class="ace-icon fa fa-comment blue"></i>
+                                        Conversation
+                                    </h4>
+                                </div>
+
+                                <div class="widget-body">
+                                    <div class="widget-main no-padding">
+                                        <div class="dialogs">
+                                            <div class="itemdiv dialogdiv">
+                                                <div class="user">
+                                                    <img alt="Alexa's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar1.png" />" />
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span class="green">4 sec</span>
+                                                    </div>
+
+                                                    <div class="name">
+                                                        <a href="#">Alexa</a>
+                                                    </div>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
+
+                                                    <div class="tools">
+                                                        <a href="#" class="btn btn-minier btn-info">
+                                                            <i class="icon-only ace-icon fa fa-share"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="itemdiv dialogdiv">
+                                                <div class="user">
+                                                    <img alt="John's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar.png" />" />
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span class="blue">38 sec</span>
+                                                    </div>
+
+                                                    <div class="name">
+                                                        <a href="#">John</a>
+                                                    </div>
+                                                    <div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
+
+                                                    <div class="tools">
+                                                        <a href="#" class="btn btn-minier btn-info">
+                                                            <i class="icon-only ace-icon fa fa-share"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="itemdiv dialogdiv">
+                                                <div class="user">
+                                                    <img alt="Bob's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar.png" />" />
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span class="orange">2 min</span>
+                                                    </div>
+
+                                                    <div class="name">
+                                                        <a href="#">Bob</a>
+                                                        <span class="label label-info arrowed arrowed-in-right">admin</span>
+                                                    </div>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.</div>
+
+                                                    <div class="tools">
+                                                        <a href="#" class="btn btn-minier btn-info">
+                                                            <i class="icon-only ace-icon fa fa-share"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="itemdiv dialogdiv">
+                                                <div class="user">
+                                                    <img alt="Jim's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar4.png" />" />
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span class="grey">3 min</span>
+                                                    </div>
+
+                                                    <div class="name">
+                                                        <a href="#">Jim</a>
+                                                    </div>
+                                                    <div class="text">Raw denim you probably haven&#39;t heard of them jean shorts Austin.</div>
+
+                                                    <div class="tools">
+                                                        <a href="#" class="btn btn-minier btn-info">
+                                                            <i class="icon-only ace-icon fa fa-share"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="itemdiv dialogdiv">
+                                                <div class="user">
+                                                    <img alt="Alexa's Avatar" src="<c:url value="/template/admin/assets/avatars/avatar1.png" />" />
+                                                </div>
+
+                                                <div class="body">
+                                                    <div class="time">
+                                                        <i class="ace-icon fa fa-clock-o"></i>
+                                                        <span class="green">4 min</span>
+                                                    </div>
+
+                                                    <div class="name">
+                                                        <a href="#">Alexa</a>
+                                                    </div>
+                                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+                                                    <div class="tools">
+                                                        <a href="#" class="btn btn-minier btn-info">
+                                                            <i class="icon-only ace-icon fa fa-share"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <form>
+                                            <div class="form-actions">
+                                                <div class="input-group">
+                                                    <input placeholder="Type your message here ..." type="text" class="form-control" name="message" />
+                                                    <span class="input-group-btn">
+																	<button class="btn btn-sm btn-info no-radius" type="button">
+																		<i class="ace-icon fa fa-share"></i>
+																		Send
+																	</button>
+																</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div><!-- /.widget-main -->
+                                </div><!-- /.widget-body -->
+                            </div><!-- /.widget-box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
     </div>
-    <!-- /.container-fluid -->
-</div>
-<!-- /.content wrapper -->
+</div><!-- /.main-content -->
 </body>
 
 </html>
