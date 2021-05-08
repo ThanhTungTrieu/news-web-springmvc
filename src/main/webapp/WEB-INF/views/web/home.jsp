@@ -160,7 +160,7 @@
         <!-- /.row -->
             <ul class="pagination" id="pagination"></ul>
             <input type="hidden" id="page" value="" name="page">
-            <input type="hidden" id="totalPages" value="" name="totalPages">
+            <input type="hidden" id="limit" value="" name="limit">
         </form>
 
     </div>

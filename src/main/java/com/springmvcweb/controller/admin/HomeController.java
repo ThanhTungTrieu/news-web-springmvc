@@ -25,4 +25,10 @@ public class HomeController {
         mav.addObject("model", newsService.findAll());
         return mav;
     }
+
+    @RequestMapping(value = "quan-tri/bai-viet/chinh-sua", method = RequestMethod.GET)
+    public ModelAndView editNewsPage() {
+        ModelAndView mav = new ModelAndView("admin/news/edit");
+        return mav;
+    }
 }
