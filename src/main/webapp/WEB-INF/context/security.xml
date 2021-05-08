@@ -23,7 +23,7 @@
 <!--            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/dang-nhap?sessionTimeout"/>-->
 <!--        </session-management>-->
             <session-management>
-                    <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/dang-nhap?sessionTimeout"/>
+                <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/dang-nhap?sessionTimeout"/>
             </session-management>
         <!-- ./ -->
         <logout delete-cookies="JSESSIONID"/>
