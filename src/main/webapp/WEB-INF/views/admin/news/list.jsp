@@ -104,111 +104,116 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <table id="simple-table" class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th class="center">
-                                            <label class="pos-rel">
-                                                <input type="checkbox" class="ace" />
-                                                <span class="lbl"></span>
-                                            </label>
-                                        </th>
-                                        <th>Tên bài viết</th>
-                                        <th>Mô tả ngắn</th>
-                                        <th class="hidden-480">Người tạo</th>
+                        <form action="<c:url value="/quan-tri/bai-viet/danh-sach" />" id="formSubmit" method="get" >
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table id="simple-table" class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th class="center">
+                                                <label class="pos-rel">
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </th>
+                                            <th>Tên bài viết</th>
+                                            <th>Mô tả ngắn</th>
+                                            <th class="hidden-480">Người tạo</th>
 
-                                        <th>
-                                            <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                                            Ngày tạo
-                                        </th>
-                                        <th class="hidden-480">Người sửa</th>
+                                            <th>
+                                                <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                                                Ngày tạo
+                                            </th>
+                                            <th class="hidden-480">Người sửa</th>
 
-                                        <th class="hidden-480">Ngày sửa</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
+                                            <th class="hidden-480">Ngày sửa</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
 
-                                    <tbody>
-                                    <c:forEach var="item" items="${model}">
-                                    <tr>
-                                        <td class="center">
-                                            <label class="pos-rel">
-                                                <input type="checkbox" class="ace" />
-                                                <span class="lbl"></span>
-                                            </label>
-                                        </td>
+                                        <tbody>
+                                        <c:forEach var="item" items="${model.listResult}">
+                                        <tr>
+                                            <td class="center">
+                                                <label class="pos-rel">
+                                                    <input type="checkbox" class="ace" />
+                                                    <span class="lbl"></span>
+                                                </label>
+                                            </td>
 
-                                        <td>
-                                            <a href="#">${item.title}</a>
-                                        </td>
-                                        <td>${item.shortDescription}</td>
-                                        <td class="hidden-480">${item.createdBy}</td>
-                                        <td>${item.createdDate}</td>
+                                            <td>
+                                                <a href="#">${item.title}</a>
+                                            </td>
+                                            <td>${item.shortDescription}</td>
+                                            <td class="hidden-480">${item.createdBy}</td>
+                                            <td>${item.createdDate}</td>
 
-                                        <td class="hidden-480">${item.modifiedBy}</td>
+                                            <td class="hidden-480">${item.modifiedBy}</td>
 
-                                        <td class="hidden-480">${item.modifiedDate}</td>
-                                        <td>
-                                            <div class="hidden-sm hidden-xs btn-group">
-                                                <button class="btn btn-xs btn-success">
-                                                    <i class="ace-icon fa fa-check bigger-120"></i>
-                                                </button>
-
-                                                <button class="btn btn-xs btn-info">
-                                                    <i class="ace-icon fa fa-pencil bigger-120"></i>
-                                                </button>
-
-                                                <button class="btn btn-xs btn-danger">
-                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                </button>
-
-                                                <button class="btn btn-xs btn-warning">
-                                                    <i class="ace-icon fa fa-flag bigger-120"></i>
-                                                </button>
-                                            </div>
-
-                                            <div class="hidden-md hidden-lg">
-                                                <div class="inline pos-rel">
-                                                    <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                        <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                            <td class="hidden-480">${item.modifiedDate}</td>
+                                            <td>
+                                                <div class="hidden-sm hidden-xs btn-group">
+                                                    <button class="btn btn-xs btn-success">
+                                                        <i class="ace-icon fa fa-check bigger-120"></i>
                                                     </button>
 
-                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                        <li>
-                                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                                                <span class="blue">
-                                                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                                                </span>
-                                                            </a>
-                                                        </li>
+                                                    <button class="btn btn-xs btn-info">
+                                                        <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                    </button>
 
-                                                        <li>
-                                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                                                                <span class="green">
-                                                                                    <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                                                </span>
-                                                            </a>
-                                                        </li>
+                                                    <button class="btn btn-xs btn-danger">
+                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                    </button>
 
-                                                        <li>
-                                                            <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                                                                <span class="red">
-                                                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                                                                </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <button class="btn btn-xs btn-warning">
+                                                        <i class="ace-icon fa fa-flag bigger-120"></i>
+                                                    </button>
                                                 </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div><!-- /.span -->
-                        </div><!-- /.row -->
+
+                                                <div class="hidden-md hidden-lg">
+                                                    <div class="inline pos-rel">
+                                                        <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                            <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                                        </button>
+
+                                                        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                            <li>
+                                                                <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+                                                                                    <span class="blue">
+                                                                                        <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                                                                                    </span>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                                                    <span class="green">
+                                                                                        <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                                                                                    </span>
+                                                                </a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                                                    <span class="red">
+                                                                                        <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div><!-- /.span -->
+                            </div><!-- /.row -->
+                            <ul class="pagination" id="pagination"></ul>
+                            <input type="hidden" id="page" value="" name="page">
+                            <input type="hidden" id="limit" value="" name="limit">
+                        </form>
 
                         <div class="hr hr-18 dotted hr-double"></div>
 
@@ -218,5 +223,24 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var totalPages = ${model.totalPages};
+        var currentPage = ${model.page};
+        var limit = 6;
+        $(function () {
+            window.pagObj = $('#pagination').twbsPagination({
+                totalPages: totalPages,
+                visiblePages: 3,
+                startPage: currentPage,
+                onPageClick: function (event, page) {
+                    if (page != currentPage) {
+                        $('#page').val(page);
+                        $('#limit').val(limit);
+                        $('#formSubmit').submit();
+                    }
+                }
+            })
+        });
+    </script>
 </body>
 </html>

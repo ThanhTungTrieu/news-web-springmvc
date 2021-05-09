@@ -18,6 +18,10 @@
     <link rel="stylesheet" href="<c:url value="/template/admin/assets/css/ace.min.css" />" class="ace-main-stylesheet" id="main-ace-style" />
     <!-- ace settings handler -->
     <script src="<c:url value="/template/admin/assets/js/ace-extra.min.js" />" ></script>
+    <!-- Basic jquery scripts and for pagination -->
+    <script src="<c:url value="/template/admin/assets/js/jquery.2.1.1.min.js" />"></script>
+    <script src="<c:url value="/template/paging/jquery.twbsPagination.js" />"></script>
+
 </head>
 <body class="no-skin">
 
@@ -45,7 +49,6 @@
 
     <!-- script -->
     <!-- basic scripts -->
-    <script src="<c:url value="/template/admin/assets/js/jquery.2.1.1.min.js" />"></script>
     <script type="text/javascript">
         window.jQuery || document.write("<script src='<c:url value="/template/admin/assets/js/jquery.min.js" />'>"+"<"+"/script>");
     </script>
