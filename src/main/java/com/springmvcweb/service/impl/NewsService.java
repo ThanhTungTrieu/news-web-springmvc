@@ -1,5 +1,6 @@
 package com.springmvcweb.service.impl;
 
+import com.springmvcweb.converter.NewsConverter;
 import com.springmvcweb.dto.NewsDTO;
 import com.springmvcweb.entity.NewsEntity;
 import com.springmvcweb.repository.NewsRepository;
@@ -17,21 +18,16 @@ public class NewsService implements INewsService {
     @Autowired
     private NewsRepository newsRepository;
 
+    @Autowired
+    private NewsConverter newsConverter;
 
     @Override
     public List<NewsDTO> findAll() {
         List<NewsDTO> models = new ArrayList<>();
         List<NewsEntity> entities = newsRepository.findAll();
         for (NewsEntity item: entities) {
-            NewsDTO model = new NewsDTO();
-            model.setTitle(item.getTitle());
-            model.setContent(item.getContent());
-            model.setShortDescription(item.getShortDescription());
-            model.setCreatedBy(item.getCreatedBy());
-            model.setCreatedDate(item.getCreatedDate());
-            model.setModifiedBy(item.getModifiedBy());
-            model.setModifiedDate(item.getModifiedDate());
-            models.add(model);
+            NewsDTO newsDTO = newsConverter.toDTO(item);
+            models.add(newsDTO);
         }
         return models;
     }
@@ -41,15 +37,8 @@ public class NewsService implements INewsService {
         List<NewsDTO> models = new ArrayList<>();
         List<NewsEntity> entities = newsRepository.findAll(pageable).getContent();
         for (NewsEntity item: entities) {
-            NewsDTO model = new NewsDTO();
-            model.setTitle(item.getTitle());
-            model.setContent(item.getContent());
-            model.setShortDescription(item.getShortDescription());
-            model.setCreatedBy(item.getCreatedBy());
-            model.setCreatedDate(item.getCreatedDate());
-            model.setModifiedBy(item.getModifiedBy());
-            model.setModifiedDate(item.getModifiedDate());
-            models.add(model);
+            NewsDTO newsDTO = newsConverter.toDTO(item);
+            models.add(newsDTO);
         }
         return models;
     }
@@ -57,5 +46,12 @@ public class NewsService implements INewsService {
     @Override
     public int getTotalItems() {
         return (int) newsRepository.count();
+    }
+
+    @Override
+    public NewsDTO findById(long id) {
+        NewsEntity newsEntity = newsRepository.findOne(id);
+        NewsDTO newsDTO = newsConverter.toDTO(newsEntity);
+        return newsDTO;
     }
 }
