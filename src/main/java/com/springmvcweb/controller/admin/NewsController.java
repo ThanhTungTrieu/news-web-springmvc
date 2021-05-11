@@ -1,6 +1,7 @@
 package com.springmvcweb.controller.admin;
 
 import com.springmvcweb.dto.NewsDTO;
+import com.springmvcweb.service.ICategoryService;
 import com.springmvcweb.service.INewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +17,9 @@ public class NewsController {
 
     @Autowired
     private INewsService newsService;
+
+    @Autowired
+    private ICategoryService categoryService;
 
     @RequestMapping(value = "/quan-tri/bai-viet/danh-sach", method = RequestMethod.GET)
     public ModelAndView listNewsPage(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "limit", required = false) Integer limit) {
@@ -35,8 +39,14 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/quan-tri/bai-viet/chinh-sua", method = RequestMethod.GET)
-    public ModelAndView editNewsPage() {
+    public ModelAndView editNewsPage(@RequestParam(value = "id", required = false) Long id) {
+        NewsDTO model = new NewsDTO();
+        if (id != null) {
+            model = newsService.findById(id);
+        }
         ModelAndView mav = new ModelAndView("admin/news/edit");
+        mav.addObject("categories", categoryService.findAll());
+        mav.addObject("model",model);
         return mav;
     }
 }

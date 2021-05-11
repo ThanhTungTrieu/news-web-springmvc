@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/common/taglib.jsp" %>
+<%@include file="/common/taglib.jsp"%>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Danh sách</title>
+    <title>Bài viết</title>
 </head>
 <body>
     <div class="main-content">
@@ -97,101 +97,79 @@
                         Bài viết
                         <small>
                             <i class="ace-icon fa fa-angle-double-right"></i>
-                            Danh sách bài viết
+                            Chỉnh sửa bài viết
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <form action="<c:url value="/quan-tri/bai-viet/danh-sach" />" id="formSubmit" method="get" >
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="widget-box table-filter">
-                                        <div class="table-btn-controls">
-                                            <div class="pull-right tableTools-container">
-                                                <div class="dt-buttons btn-overlap btn-group">
-                                                    <a flag="info"
-                                                       class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
-                                                       data-toggle="tooltip" title='Thêm bài viết'
-                                                       href='<c:url value="/quan-tri/bai-viet/chinh-sua"/>'>
-														<span>
-															<i class="fa fa-plus-circle bigger-110 purple"></i>
-														</span>
-                                                    </a>
-                                                    <button id="btnDelete" type="button"
-                                                            class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
-                                                            data-toggle="tooltip" title='Xóa bài viết'>
-														<span>
-															<i class="fa fa-trash-o bigger-110 pink"></i>
-														</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered">
-                                            <thead>
-                                            <tr>
-                                                <th><input type="checkbox" id="checkAll"></th>
-                                                <th>Tên bài viết</th>
-                                                <th>Mô tả ngắn</th>
-                                                <th>Thao tác</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <c:forEach var="item" items="${model.listResult}">
-                                                <tr>
-                                                    <td><input type="checkbox" id="checkbox_${item.id}" value="${item.id}"></td>
-                                                    <td>${item.title}</td>
-                                                    <td>${item.shortDescription}</td>
-                                                    <td>
-                                                        <c:url var="editNewsURL" value="/quan-tri/bai-viet/chinh-sua">
-                                                            <c:param name="id" value="${item.id}" />
-                                                        </c:url>
-                                                        <a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
-                                                           title="Cập nhật bài viết" href='${editNewsURL}'><i
-                                                                class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </c:forEach>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div><!-- /.span -->
-                            </div><!-- /.row -->
-                            <ul class="pagination" id="pagination"></ul>
-                            <input type="hidden" id="page" value="" name="page">
-                            <input type="hidden" id="limit" value="" name="limit">
-                        </form>
-
-                        <div class="hr hr-18 dotted hr-double"></div>
-
-                        <!--hết-->
+                        <form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="categoryCode">Thể loại</label>
+                                <div class="col-sm-6">
+                                    <form:select path="categoryCode" cssClass="form-control" id="categoryCode">
+                                        <form:option value="" label="-- Chọn thể loại --" />
+                                        <form:options items="${categories}" itemValue="code" itemLabel="name" />
+                                    </form:select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="title"> Tên bài viết </label>
+                                <div class="col-sm-6">
+                                    <form:input path="title" cssClass="form-control col-xs-10 col-sm-5" id="title"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="thumbnail"> Hình đại diện </label>
+                                <div class="col-sm-9">
+                                    <input type="file" id="thumbnail" name="thumbnail" placeholder="Hình đại diện" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="shortDescription"> Mô tả ngắn </label>
+                                <div class="col-sm-6">
+                                    <form:textarea path="shortDescription" cssClass="form-control col-xs-10 col-sm-5" id="shortDescription" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="content"> Nội dung </label>
+                                <div class="col-sm-6">
+                                    <form:textarea path="content" cssClass="form-control col-xs-10 col-sm-5" rows="5" id="content" />
+                                </div>
+                            </div>
+                            <div class="clearfix form-actions">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <c:if test="${not empty model.id}">
+                                        <button class="btn btn-info" type="button" id="btnAddOrUpdateNews">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            Cập nhập bài viết
+                                        </button>
+                                    </c:if>
+                                    <c:if test="${empty model.id}" >
+                                        <button class="btn btn-info" type="button" id="btnAddOrUpdateNews">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            Thêm bài viết
+                                        </button>
+                                    </c:if>
+                                    &nbsp; &nbsp;
+                                    <button class="btn" type="reset">
+                                        <i class="ace-icon fa fa-undo bigger-110"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </form:form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        var totalPages = ${model.totalPages};
-        var currentPage = ${model.page};
-        var limit = 6;
-        $(function () {
-            window.pagObj = $('#pagination').twbsPagination({
-                totalPages: totalPages,
-                visiblePages: 3,
-                startPage: currentPage,
-                onPageClick: function (event, page) {
-                    if (page != currentPage) {
-                        $('#page').val(page);
-                        $('#limit').val(limit);
-                        $('#formSubmit').submit();
-                    }
-                }
-            })
+    <script>
+        $('#btnAddOrUpdateNews').click(function (e) {
+            e.preventDefault();
+            var formData = $('#formSubmit').serializeArray();
+            console.log(formData);
         });
     </script>
 </body>
