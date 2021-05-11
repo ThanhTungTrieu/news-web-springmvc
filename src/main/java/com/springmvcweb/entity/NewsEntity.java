@@ -22,6 +22,14 @@ public class NewsEntity extends BaseEntity {
     @JoinColumn(name = "categoryId")
     private CategoryEntity category;
 
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
     public String getTitle() {
         return title;
     }
