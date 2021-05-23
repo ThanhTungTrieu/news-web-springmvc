@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="newsAPIUrl" value="/api/bai-viet" />
+<c:url var="listUrl" value="/quan-tri/bai-viet/danh-sach" />
 <html>
 <head>
     <meta charset="UTF-8">
@@ -138,6 +140,7 @@
                                     <form:textarea path="content" cssClass="form-control col-xs-10 col-sm-5" rows="5" id="content" />
                                 </div>
                             </div>
+                            <form:hidden path="id" id="newsId" />
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
                                     <c:if test="${not empty model.id}">
@@ -168,9 +171,50 @@
     <script>
         $('#btnAddOrUpdateNews').click(function (e) {
             e.preventDefault();
+            var data = {};
             var formData = $('#formSubmit').serializeArray();
-            console.log(formData);
+            $.each(formData, function (i, v) {
+                data["" + v.name + ""] = v.value;
+            });
+            var id = $('#newsId').val();
+            if (id == "") {
+                addNews(data);
+            } else {
+                updateNews(data);
+            }
         });
+
+        function addNews(data) {
+            $.ajax({
+                url: '${newsAPIUrl}',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    window.location.href = "${listUrl}";
+                },
+                error: function (result) {
+                    window.location.href = "${listUrl}";
+                }
+            });
+        }
+
+        function updateNews(data) {
+            $.ajax({
+                url: '${newsAPIUrl}',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    window.location.href = "${listUrl}";
+                },
+                error: function (result) {
+                    window.location.href = "${listUrl}";
+                }
+            });
+        }
     </script>
 </body>
 </html>
