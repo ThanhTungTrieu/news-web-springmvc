@@ -198,7 +198,7 @@
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    window.location.href = "${listUrl}?page=1&limit=6&alert=success&message=insert_success";
+                    window.location.href = "${listUrl}?page=1&limit=10&alert=success&message=insert_success";
                 },
                 error: function (result) {
                     window.location.href = "${editURL}?alert=danger&message=system_error";
@@ -217,7 +217,7 @@
                     window.location.href = "${editURL}?id=" + result.id + "&alert=success&message=update_success";
                 },
                 error: function (result) {
-                    window.location.href = "${listUrl}?page=1&limit=6&alert=danger&message=system_error";
+                    window.location.href = "${listUrl}?page=1&limit=10&alert=danger&message=system_error";
                 }
             });
         }
