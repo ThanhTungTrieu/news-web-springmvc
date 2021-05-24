@@ -2,6 +2,7 @@
 <%@include file="/common/taglib.jsp"%>
 <c:url var="newsAPIUrl" value="/api/bai-viet" />
 <c:url var="listUrl" value="/quan-tri/bai-viet/danh-sach" />
+<c:url var="editURL" value="/quan-tri/bai-viet/chinh-sua" />
 <html>
 <head>
     <meta charset="UTF-8">
@@ -103,6 +104,11 @@
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
+                <c:if test="${not empty message}" >
+                    <div class="alert alert-${alert}">
+                        ${message}
+                    </div>
+                </c:if>
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
@@ -192,10 +198,10 @@
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    window.location.href = "${listUrl}";
+                    window.location.href = "${listUrl}?page=1&limit=6&alert=success&message=insert_success";
                 },
                 error: function (result) {
-                    window.location.href = "${listUrl}";
+                    window.location.href = "${editURL}?alert=danger&message=system_error";
                 }
             });
         }
@@ -208,10 +214,10 @@
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    window.location.href = "${listUrl}";
+                    window.location.href = "${editURL}?id=" + result.id + "&alert=success&message=update_success";
                 },
                 error: function (result) {
-                    window.location.href = "${listUrl}";
+                    window.location.href = "${listUrl}?page=1&limit=6&alert=danger&message=system_error";
                 }
             });
         }

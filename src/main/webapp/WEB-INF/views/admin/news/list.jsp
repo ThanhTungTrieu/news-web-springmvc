@@ -101,6 +101,11 @@
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
+                <c:if test="${not empty message}" >
+                    <div class="alert alert-${alert}">
+                            ${message}
+                    </div>
+                </c:if>
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
