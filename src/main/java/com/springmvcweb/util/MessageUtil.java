@@ -11,10 +11,13 @@ public class MessageUtil {
         Map<String, String> result = new HashMap<>();
         if (message.equals("insert_success")) {
             result.put("alert", "success");
-            result.put("message", "Thêm bài viết thành công");
+            result.put("message", "Thêm thành công");
         } else if (message.equals("update_success")) {
             result.put("alert", "success");
-            result.put("message", "Cập nhật bài viết thành công");
+            result.put("message", "Cập nhật thành công");
+        } else if (message.equals("delete_success")) {
+            result.put("alert", "success");
+            result.put("message", "Xoá thành công");
         } else if (message.equals("system_error")) {
             result.put("alert", "danger");
             result.put("message", "Lỗi hệ thống");
