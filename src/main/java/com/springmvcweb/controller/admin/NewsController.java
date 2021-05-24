@@ -32,7 +32,7 @@ public class NewsController {
                                      @RequestParam(value = "limit", required = false) Integer limit,
                                      @RequestParam(value = "message", required = false) String message) {
         if (page == null || limit == null) {
-            return new ModelAndView("redirect:/quan-tri/bai-viet/danh-sach?page=1&limit=6");
+            return new ModelAndView("redirect:/quan-tri/bai-viet/danh-sach?page=1&limit=10");
         }
         NewsDTO model = new NewsDTO();
         model.setPage(page);
