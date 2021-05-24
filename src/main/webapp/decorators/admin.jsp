@@ -22,6 +22,10 @@
     <script src="<c:url value="/template/admin/assets/js/jquery.2.1.1.min.js" />"></script>
     <script src="<c:url value="/template/paging/jquery.twbsPagination.js" />"></script>
 
+    <!--  sweet alert  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
 </head>
 <body class="no-skin">
 
@@ -67,6 +71,7 @@
     <!-- ace scripts -->
     <script src="<c:url value="/template/admin/assets/js/ace-elements.min.js" />"></script>
     <script src="<c:url value="/template/admin/assets/js/ace.min.js" />"></script>
+
     <!-- inline scripts related to this page -->
     <script type="text/javascript">
         jQuery(function($) {
