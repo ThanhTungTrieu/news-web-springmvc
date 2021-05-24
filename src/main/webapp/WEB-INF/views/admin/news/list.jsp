@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
+<c:url var="newsAPIUrl" value="/api/bai-viet" />
+<c:url var="listUrl" value="/quan-tri/bai-viet/danh-sach" />
+<c:url var="editURL" value="/quan-tri/bai-viet/chinh-sua" />
 <html>
 <head>
     <meta charset="UTF-8">
@@ -124,7 +127,7 @@
 															<i class="fa fa-plus-circle bigger-110 purple"></i>
 														</span>
                                                     </a>
-                                                    <button id="btnDelete" type="button"
+                                                    <button id="btnDelete" type="button" onclick="warningBeforeDelete()"
                                                             class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
                                                             data-toggle="tooltip" title='Xóa bài viết'>
 														<span>
@@ -183,7 +186,7 @@
     <script type="text/javascript">
         var totalPages = ${model.totalPages};
         var currentPage = ${model.page};
-        var limit = 6;
+        var limit = 10;
         $(function () {
             window.pagObj = $('#pagination').twbsPagination({
                 totalPages: totalPages,
@@ -198,6 +201,43 @@
                 }
             })
         });
+
+        function warningBeforeDelete() {
+            swal({
+                title: "Xác nhận xoá?",
+                text: "Bạn sẽ không thể lấy lại dữ liệu nếu đã xoá!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Xác nhận!",
+                cancelButtonText: "Huỷ!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+                function(isConfirm) {
+                    if (isConfirm) {
+                        var ids = $('tbody input[type=checkbox]:checked').map(function () {
+                            return $(this).val();
+                        }).get();
+                        deleteNews(ids);
+                    }
+                });
+        }
+
+        function deleteNews(data) {
+            $.ajax({
+                url: '${newsAPIUrl}',
+                type: 'DELETE',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (result) {
+                    window.location.href= "${listUrl}?page=1&limit=10&message=delete_success";
+                },
+                error: function (error) {
+                    window.location.href= "${listUrl}?page=1&limit=10&message=system_error";
+                }
+            });
+        }
     </script>
 </body>
 </html>
