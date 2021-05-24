@@ -22,7 +22,7 @@ public class NewsAPI {
     }
 
     @DeleteMapping("/api/bai-viet")
-    public void deleteNews(@RequestBody Long[] ids) {
-
+    public void deleteNews(@RequestBody long[] ids) {
+        newsService.delete(ids);
     }
 }

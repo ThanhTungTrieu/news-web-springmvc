@@ -11,4 +11,5 @@ public interface INewsService {
     int getTotalItems();
     NewsDTO findById(long id);
     NewsDTO save(NewsDTO newsDTO);
+    void delete(long ids[]);
 }
